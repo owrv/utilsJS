@@ -31,12 +31,12 @@ function replicate(argOne, argTwo) {
 
 function exempleOne() {
     const obj = ["league of legends", "hearthstone", "metin2", "dota2"]
-const query = "delete from games where des_name in"
+    const query = "delete from games where des_name in"
 
-const result = replicate(query, obj)
+    const result = replicate(query, obj)
 
-console.log(result)
-
+    console.log(result)
+    // saveFile('exempleOne.txt', result)
 }
 
 /* 
@@ -44,27 +44,27 @@ console.log(result)
 */
 
 function exempleTwo() {
-const parameterOne = ['RCSL4', 'CIEL3', 'POMO4', 'GFSA3', 'TPIS3', 'COGN3', 'LPSB3', 'TECN3', 'MEAL3', 'PLPL3', 'HBSA3', 'SAPR4', 'BMGB4', 'OPCT3', 'ENJU3', 'LAME3', 'NGRD3', 'IRBR3', 'LAME4', 'RCSL3', 'SHOW3', 'TCSA3', 'AMAR3']
+    const parameterOne = ['RCSL4', 'CIEL3', 'POMO4', 'GFSA3', 'TPIS3', 'COGN3', 'LPSB3', 'TECN3', 'MEAL3', 'PLPL3', 'HBSA3', 'SAPR4', 'BMGB4', 'OPCT3', 'ENJU3', 'LAME3', 'NGRD3', 'IRBR3', 'LAME4', 'RCSL3', 'SHOW3', 'TCSA3', 'AMAR3']
     const parameterTwo = ["1.09", "5.64", "2.76", "7.66", "1.66", "3.18", "2.8", "2.13", "2.34", "4.17", "2.6", "3.85", "2.5", "2.55", "1.16", "#N/A", "1.53", "0.93", "#N/A", "2.04", "2.83", "3.84", "1.99"]
-const query = "insert into smallCaps (code, price) values\n"
+    const query = "insert into smallCaps (code, price) values\n"
 
-let unity = []
-let result = ""
-parameterOne.forEach((one, indexOne) => {
-    parameterTwo.forEach((two, indexTwo) => {
+    let unity = []
+    let result = ""
+    parameterOne.forEach((one, indexOne) => {
+        parameterTwo.forEach((two, indexTwo) => {
             if (indexOne === indexTwo) {
-            unity.push(one)
-            unity.push(two)
-            result = replicate(result, unity)
+                unity.push(one)
+                unity.push(two)
+                result = replicate(result, unity)
                 if (indexOne < (parameterOne.length - 1)) {
-                result += ",\n"
+                    result += ",\n"
+                }
+                unity = []
             }
-            unity = []
-        }
+        })
     })
-})
 
-
-console.log(query + result)
+    console.log(query + result)
+    // saveFile('exempleTwo.txt', query + result)
 }
 
