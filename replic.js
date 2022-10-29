@@ -1,3 +1,12 @@
+fs = require('fs')
+
+function saveFile(fileName, data) {
+    fs.writeFile(fileName, data, function (err) {
+        if (err) return console.log(err)
+        console.log(`Operation completed!\nFile ${fileName} created.`)
+    })
+}
+
 function replicate(argOne, argTwo) {
     //argOne = deve ser uma string
     //argTwo = pode ser uma matriz
