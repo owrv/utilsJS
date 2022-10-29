@@ -26,8 +26,8 @@ function replicate(argOne, argTwo) {
 }
 
 /*
-    Exemplos de uso: 
-        incluir uma nova condicional 
+*  Examples of use 1: 
+*/
 
 function exempleOne() {
 const query = "delete from games where des_name in"
@@ -39,7 +39,7 @@ console.log(result)
 }
 
 /* 
-*   Também é possível passa fazer desta maneira: 
+*   Examples of use 2: 
 */
 
 function exempleTwo() {
@@ -51,11 +51,11 @@ let unity = []
 let result = ""
 parameterOne.forEach((one, indexOne) => {
     parameterTwo.forEach((two, indexTwo) => {
-        if(indexOne === indexTwo) {
+            if (indexOne === indexTwo) {
             unity.push(one)
             unity.push(two)
             result = replicate(result, unity)
-            if(indexOne < (parameterOne.length - 1)) {
+                if (indexOne < (parameterOne.length - 1)) {
                 result += ",\n"
             }
             unity = []
