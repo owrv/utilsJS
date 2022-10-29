@@ -30,6 +30,7 @@ function replicate(argOne, argTwo) {
 */
 
 function exempleOne() {
+    const obj = ["league of legends", "hearthstone", "metin2", "dota2"]
 const query = "delete from games where des_name in"
 
 const result = replicate(query, obj)
